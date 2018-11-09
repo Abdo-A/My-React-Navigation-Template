@@ -21,10 +21,15 @@ export default createStackNavigator(
       let screen = navigation.state.routeName;
 
       //values we will modify then return:
-      let tabBarVisible = true;
-      let headerStyle = {};
       let headerTitle = "";
       let headerRight = "";
+      let headerLeft = "";
+      let headerStyle = {
+        backgroundColor: colors.primary
+      };
+      let headerTitleStyle = {
+        color: colors.white
+      };
       //and so on...
 
       //For each screen:
