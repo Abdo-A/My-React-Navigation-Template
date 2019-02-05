@@ -1,13 +1,11 @@
-import { createStackNavigator } from 'react-navigation';
-import { Text, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import { colors } from '../assets/base';
 import BottomTabNavigator from './BottomTabNavigator';
 import HomePartialScreen from '../screens/HomeScreen/HomePartialScreen/HomePartialScreen';
 import SettingsPartialScreen from '../screens/SettingsScreen/SettingsPartialScreen/SettingsPartialScreen';
 
-export default createStackNavigator(
+const RootNavigator = createStackNavigator(
   {
     Tab: BottomTabNavigator,
     HomePartial: HomePartialScreen,
@@ -19,7 +17,7 @@ export default createStackNavigator(
     // We only need to configure the header options only for the 'tab' screens here
     // But for other screens (like homePartial and settingsPartial) we do that in their own components
 
-    navigationOptions: ({ navigation }) => {
+    defaultNavigationOptions: ({ navigation }) => {
       //--first, we check which screen it is:
       let screen = navigation.state.routeName;
 
@@ -77,3 +75,5 @@ export default createStackNavigator(
     }
   }
 );
+
+export default createAppContainer(RootNavigator);

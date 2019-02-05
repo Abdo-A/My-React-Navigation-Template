@@ -5,5 +5,5 @@ export const colors = {
 };
 
 export const sizes = {
-  bottomTabHeight: 80
+  bottomTabHeight: 70
 };
